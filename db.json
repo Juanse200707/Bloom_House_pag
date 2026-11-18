@@ -1,0 +1,205 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Admin Bloom",
+      "email": "admin@bloom.co",
+      "password": "c0beb5f783db35ccd7991a69ecdd6af2e0d1c5e9f0b98e46672d3fe08bd89e29",
+      "rol": "admin"
+    },
+    {
+      "id": 2,
+      "nombre": "Flores del Valle",
+      "email": "empresa@bloom.co",
+      "password": "c0beb5f783db35ccd7991a69ecdd6af2e0d1c5e9f0b98e46672d3fe08bd89e29",
+      "rol": "empresa",
+      "empresaId": 1
+    },
+    {
+      "id": 3,
+      "nombre": "Ana Cliente",
+      "email": "cliente@bloom.co",
+      "password": "c0beb5f783db35ccd7991a69ecdd6af2e0d1c5e9f0b98e46672d3fe08bd89e29",
+      "rol": "cliente"
+    }
+  ],
+  "empresas": [
+    {
+      "id": 1,
+      "nombre": "Flores del Valle",
+      "localidad": "Chapinero",
+      "ciudad": "Bogotá",
+      "especialidades": [
+        "Ramos nupciales",
+        "Decoración eventos"
+      ],
+      "desde": 2018,
+      "verificada": true,
+      "whatsapp": "573001112233"
+    },
+    {
+      "id": 2,
+      "nombre": "La Orquídea Dorada",
+      "localidad": "El Poblado",
+      "ciudad": "Medellín",
+      "especialidades": [
+        "Orquídeas",
+        "Plantas tropicales"
+      ],
+      "desde": 2015,
+      "verificada": true,
+      "whatsapp": "573004445566"
+    },
+    {
+      "id": 3,
+      "nombre": "Casa Florentina",
+      "localidad": "Granada",
+      "ciudad": "Cali",
+      "especialidades": [
+        "Bouquet artesanal",
+        "Flores secas"
+      ],
+      "desde": 2020,
+      "verificada": true,
+      "whatsapp": "573007778899"
+    },
+    {
+      "id": 4,
+      "nombre": "Bloom & Co",
+      "localidad": "Alto Prado",
+      "ciudad": "Barranquilla",
+      "especialidades": [
+        "Bodas de lujo",
+        "Centros de mesa"
+      ],
+      "desde": 2021,
+      "verificada": true,
+      "whatsapp": "573001230000"
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Corona Fúnebre Clásica",
+      "empresaId": 1,
+      "categoria": "Coronas",
+      "tipo": "Mixtas",
+      "localidad": "Chapinero",
+      "precio": 180000,
+      "precioAnterior": 0,
+      "etiqueta": "",
+      "stock": 10,
+      "activo": true,
+      "descripcion": "Descripción del producto."
+    },
+    {
+      "id": 2,
+      "nombre": "Ramo de Rosas Rojas Premium",
+      "empresaId": 1,
+      "categoria": "Ramos",
+      "tipo": "Rosas",
+      "localidad": "Chapinero",
+      "precio": 85000,
+      "precioAnterior": 110000,
+      "etiqueta": "Más vendido",
+      "stock": 12,
+      "activo": true,
+      "descripcion": "Descripción del producto."
+    },
+    {
+      "id": 3,
+      "nombre": "Jardín Miniatura Suculentas",
+      "empresaId": 2,
+      "categoria": "Plantas",
+      "tipo": "Suculentas",
+      "localidad": "El Poblado",
+      "precio": 48000,
+      "precioAnterior": 0,
+      "etiqueta": "",
+      "stock": 9,
+      "activo": true,
+      "descripcion": "Descripción del producto."
+    },
+    {
+      "id": 4,
+      "nombre": "Arreglo Tropical Silvestre",
+      "empresaId": 2,
+      "categoria": "Arreglos",
+      "tipo": "Mixtas",
+      "localidad": "El Poblado",
+      "precio": 65000,
+      "precioAnterior": 0,
+      "etiqueta": "",
+      "stock": 7,
+      "activo": true,
+      "descripcion": "Descripción del producto."
+    },
+    {
+      "id": 5,
+      "nombre": "Ramo Silvestre Colombiano",
+      "empresaId": 3,
+      "categoria": "Ramos",
+      "tipo": "Mixtas",
+      "localidad": "Granada",
+      "precio": 55000,
+      "precioAnterior": 0,
+      "etiqueta": "",
+      "stock": 6,
+      "activo": true,
+      "descripcion": "Descripción del producto."
+    },
+    {
+      "id": 6,
+      "nombre": "Bouquet Primavera Pastel",
+      "empresaId": 3,
+      "categoria": "Ramos",
+      "tipo": "Tulipanes",
+      "localidad": "Granada",
+      "precio": 72000,
+      "precioAnterior": 0,
+      "etiqueta": "Nuevo",
+      "stock": 8,
+      "activo": true,
+      "descripcion": "Descripción del producto."
+    },
+    {
+      "id": 7,
+      "nombre": "Centro de Mesa Bodas",
+      "empresaId": 4,
+      "categoria": "Eventos",
+      "tipo": "Girasoles",
+      "localidad": "Alto Prado",
+      "precio": 150000,
+      "precioAnterior": 180000,
+      "etiqueta": "Oferta",
+      "stock": 4,
+      "activo": true,
+      "descripcion": "Descripción del producto."
+    },
+    {
+      "id": 8,
+      "nombre": "Rosas Ecuatorianas XL",
+      "empresaId": 4,
+      "categoria": "Ramos",
+      "tipo": "Rosas",
+      "localidad": "Alto Prado",
+      "precio": 95000,
+      "precioAnterior": 0,
+      "etiqueta": "",
+      "stock": 0,
+      "activo": true,
+      "descripcion": "Descripción del producto."
+    }
+  ],
+  "resenas": [
+    {
+      "id": 1,
+      "productoId": 2,
+      "usuario": "Ana Cliente",
+      "estrellas": 5,
+      "texto": "Hermosas y frescas."
+    }
+  ],
+  "pedidos": [],
+  "mensajes": []
+}
