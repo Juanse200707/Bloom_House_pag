@@ -14,9 +14,9 @@ const datosIniciales = {
     { id: 12, nombre: "Jorge Salazar", email: "jorge.salazar@correo.com", password: "a03da7f4f951af7b82d8148dc2aea84a6bcbc02e24d24d3361ea292ed0c29949", rol: "cliente" }
   ],
   empresas: [
-    { id: 1, nombre: "Flores del Valle", localidad: "Kennedy", ciudad: "Bogotá", especialidades: [], desde: null, verificada: true, whatsapp: "573101234501" },
-    { id: 2, nombre: "Jardin de Aurora", localidad: "Kennedy", ciudad: "Bogotá", especialidades: [], desde: null, verificada: true, whatsapp: "573101234502" },
-    { id: 3, nombre: "Petalos y Colores", localidad: "Kennedy", ciudad: "Bogotá", especialidades: [], desde: null, verificada: true, whatsapp: "573101234503" }
+    { id: 1, nombre: "Flores del Valle", localidad: "Kennedy", ciudad: "Bogotá", especialidades: [], desde: null, verificada: true, whatsapp: "573101234501", imagen: "imagenes/FloresdelValle.png" },
+    { id: 2, nombre: "Jardin de Aurora", localidad: "Kennedy", ciudad: "Bogotá", especialidades: [], desde: null, verificada: true, whatsapp: "573101234502", imagen: "imagenes/JardinAurora.png" },
+    { id: 3, nombre: "Petalos y Colores", localidad: "Kennedy", ciudad: "Bogotá", especialidades: [], desde: null, verificada: true, whatsapp: "573101234503", imagen: "imagenes/PetalosColores.png" }
   ],
   productos: [
     { id: 1, nombre: "Ramo de 12 rosas rojas", empresaId: 1, categoria: "Ramos", tipo: "Rosas", localidad: "Kennedy", precio: 85000, precioAnterior: 0, etiqueta: "", stock: 20, activo: true, descripcion: "Docena de rosas rojas frescas con follaje y papel kraft", imagen: "imagenes/Ramo12rosasrojas.png" },
