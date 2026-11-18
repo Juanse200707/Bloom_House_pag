@@ -372,7 +372,7 @@ async function montarInterfazComun() {
     nav.innerHTML = `
       <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom sticky-top">
         <div class="container">
-          <a class="navbar-brand fw-bold" href="index.html">🌸 Bloom House</a>
+          <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"><img src="imagenes/logo.png" alt="" class="logo-marca" onerror="this.style.display='none'"> Bloom House</a>
           <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menuNav">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -383,9 +383,9 @@ async function montarInterfazComun() {
               ${enlace('nosotros.html', 'Nosotros')}
             </ul>
             <div class="d-flex align-items-center gap-2">
-              <a class="btn btn-sm" href="index.html#buscar">🔍</a>
+              <a class="btn btn-sm" href="index.html#buscar"><i class="bi bi-search"></i></a>
               <div class="dropdown">
-                <button class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown">🌐 ES</button>
+                <button class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-globe2"></i> ES</button>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="#">Español</a></li>
                   <li><a class="dropdown-item" href="#">English</a></li>
@@ -393,7 +393,7 @@ async function montarInterfazComun() {
               </div>
               <div class="dropdown">
                 <button class="btn btn-sm position-relative" data-bs-toggle="dropdown">
-                  🔔 ${notificaciones.length ? `<span class="badge rounded-pill bg-danger position-absolute top-0 start-100 translate-middle">${notificaciones.length}</span>` : ''}
+                 <i class="bi bi-bell"></i> ${notificaciones.length ? `<span class="badge rounded-pill bg-danger position-absolute top-0 start-100 translate-middle">${notificaciones.length}</span>` : ''}
                 </button>
                 <div class="dropdown-menu dropdown-menu-end p-0" style="min-width:300px">
                   <div class="p-2 fw-semibold border-bottom">Notificaciones <span class="badge bg-primary">${notificaciones.length}</span></div>
@@ -407,7 +407,7 @@ async function montarInterfazComun() {
                 </div>
               </div>
               <button class="btn btn-sm position-relative" data-bs-toggle="offcanvas" data-bs-target="#carritoLateral">
-                🛒 <span id="contadorCarrito" class="badge rounded-pill bg-warning text-dark position-absolute top-0 start-100 translate-middle">0</span>
+               <i class="bi bi-cart3"></i> <span id="contadorCarrito" class="badge rounded-pill bg-warning text-dark position-absolute top-0 start-100 translate-middle">0</span>
               </button>
               ${sesion ? `
                 <div class="dropdown">
@@ -434,7 +434,7 @@ async function montarInterfazComun() {
         <div class="container">
           <div class="row g-3">
             <div class="col-md-3">
-              <h5 class="text-white">🌸 Bloom House</h5>
+             <h5 class="text-white d-flex align-items-center gap-2"><img src="imagenes/logo.png" alt="" class="logo-marca" onerror="this.style.display='none'"> Bloom House</h5>
               <small>Marketplace y red de distribución floral colombiana.</small>
             </div>
             <div class="col-6 col-md-3">
