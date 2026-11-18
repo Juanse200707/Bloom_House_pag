@@ -61,7 +61,7 @@ const datosIniciales = {
 
 // Cargar o inicializar la base de datos local
 function obtenerBaseDatos() {
-  const clave = "bloomHouseDatos_v3";
+  const clave = "bloomHouseDatos_v4";
   const guardada = localStorage.getItem(clave);
   if (guardada) {
     try { return JSON.parse(guardada); } catch { /* ignorar */ }
@@ -71,7 +71,7 @@ function obtenerBaseDatos() {
 }
 
 function guardarBaseDatos(datos) {
-  localStorage.setItem("bloomHouseDatos_v3", JSON.stringify(datos));
+  localStorage.setItem("bloomHouseDatos_v4", JSON.stringify(datos));
 }
 // Simulador de API (reemplaza a json-server)
 async function llamarApi(ruta, opciones = {}) {
