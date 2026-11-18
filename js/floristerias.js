@@ -40,7 +40,7 @@
                 <div class="col-md-6">
                     <a class="text-decoration-none text-reset" href="index.html?empresa=${empresa.id}">
                         <div class="card h-100 position-relative">
-                            <img src="${crearImagenPlaceholder(empresa.nombre)}" class="card-img-top" alt="${empresa.nombre}">
+                            <img src="${empresa.imagen || crearImagenPlaceholder(empresa.nombre)}" class="card-img-top" alt="${empresa.nombre}" style="object-fit:cover" onerror="this.onerror=null; this.src='${crearImagenPlaceholder(empresa.nombre)}'">
                             ${empresa.verificada ? `
                                 <span class="badge bg-light text-dark position-absolute top-0 end-0 m-2">
                                     Verificada
