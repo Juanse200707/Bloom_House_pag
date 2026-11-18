@@ -1,7 +1,17 @@
+/* Tipografías de Google Fonts:
+   Playfair Display (títulos), Lato (texto) y JetBrains Mono (datos) */
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Íconos de línea (lupa, campana, carrito, ubicación, etc.) */
 @import url('https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css');
-/*1. VARIABLES: colores y fuentes de toda la página */
+
+
+/* ============================================================
+   1. VARIABLES: colores y fuentes de toda la página
+   Si quieres cambiar un color, cámbialo aquí y se actualiza en todo el sitio.
+   ============================================================ */
 :root {
+  /* Variables propias de Bloom House */
   --bh-crema: #f4efe6;            /* fondo de la página */
   --bh-cafe: #2a1b0e;             /* texto y fondos oscuros */
   --bh-morado: #7b5ea7;           /* color principal */
@@ -12,12 +22,12 @@
   --bh-fuente-titulos: 'Playfair Display', Georgia, serif;
   --bh-fuente-datos: 'JetBrains Mono', ui-monospace, monospace;
 
-  /* Variables de Bootstrap*/
+  /* Variables de Bootstrap que sobrescribimos con nuestra paleta */
   --bs-body-font-family: 'Lato', system-ui, sans-serif;
   --bs-body-font-weight: 400;
   --bs-body-bg: var(--bh-crema);
   --bs-body-color: var(--bh-cafe);
-  --bs-secondary-color: #7d6b5a;           /* color del texto*/
+  --bs-secondary-color: #7d6b5a;           /* color del texto atenuado */
   --bs-border-color: var(--bh-borde);
   --bs-link-color: var(--bh-morado);
   --bs-link-color-rgb: 123, 94, 167;
@@ -41,7 +51,9 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
-/*2. BOTONES*/
+/* ============================================================
+   2. BOTONES
+   ============================================================ */
 .btn { border-radius: 12px; font-weight: 700; }
 
 /* Botón principal: morado, con tonos más oscuros al pasar el mouse o hacer clic */
@@ -72,7 +84,10 @@ h1, h2, h3, h4, h5, h6,
 
 .rounded-pill { border-radius: 999px !important; }
 
-/*3. BARRA DE NAVEGACIÓN*/
+
+/* ============================================================
+   3. BARRA DE NAVEGACIÓN (la que se repite en todas las páginas)
+   ============================================================ */
 #nav .navbar {
   border-bottom: 1px solid var(--bh-borde) !important;
   padding-block: .55rem;
@@ -173,7 +188,9 @@ header.bg-dark.text-center p {
 }
 
 
-/*6. TARJETAS (productos, floristerías y cuadros del panel)*/
+/* ============================================================
+   6. TARJETAS (productos, floristerías y cuadros del panel)
+   ============================================================ */
 .card {
   border: 0;
   border-radius: 16px;
@@ -182,7 +199,6 @@ header.bg-dark.text-center p {
   overflow: hidden;
   transition: transform .2s, box-shadow .2s;
 }
-
 /* Al pasar el mouse por un producto, la tarjeta se levanta un poco */
 #lista .card:hover {
   transform: translateY(-3px);
@@ -259,7 +275,7 @@ header.bg-dark.text-center p {
 #lista .card-body a.small:hover { text-decoration: underline; }
 
 /* Colores de las etiquetas según su tipo.
-   (Requieren el cambio opcional del Paso 3 en catalogo.js) */
+   (Requieren el cambio opcional en catalogo.js: class="badge etiqueta ..." data-etiqueta="${producto.etiqueta}") */
 .etiqueta { background: #4a6b3a; color: #fff; }                      /* Más vendido: verde */
 .etiqueta[data-etiqueta="Nuevo"] { background: #7b5ea7; }            /* Nuevo: morado */
 .etiqueta[data-etiqueta="Oferta"] { background: #c9a449; }           /* Oferta: dorado */
@@ -287,7 +303,9 @@ a.text-reset:hover .card {
 .card-body small { font-size: .78rem; }
 
 
-/*7. FORMULARIOS (inicio de sesión, registro, soporte, panel)*/
+/* ============================================================
+   7. FORMULARIOS (inicio de sesión, registro, soporte, panel)
+   ============================================================ */
 .form-control, .form-select { border-radius: 12px; font-size: .9rem; }
 
 /* Campos dentro de tarjetas y ventanas: fondo crema */
@@ -316,7 +334,9 @@ a.text-reset:hover .card {
 .nav-pills .nav-link.active { color: #fff; }
 
 
-/*8. VENTANAS EMERGENTES Y CARRITO LATERAL*/
+/* ============================================================
+   8. VENTANAS EMERGENTES Y CARRITO LATERAL
+   ============================================================ */
 .modal-content { border: 0; border-radius: 20px; }
 .modal-header { border-bottom-color: #efe6d8; padding: 1.2rem 1.5rem; }
 .modal-body { padding: 1.2rem 1.5rem 1.5rem; }
@@ -365,10 +385,13 @@ a.text-reset:hover .card {
 #totalCarrito { font-family: var(--bh-fuente-titulos); font-size: 1.25rem; }
 
 
-/*9. PÁGINAS DE CONTENIDO (Nosotros y Términos)*/
-main.container h3 { font-size: 1.6rem; margin-bottom: 1.2rem; }
+/* ============================================================
+   9. PÁGINAS DE CONTENIDO (Términos y otras)
+   ============================================================ */
+/* Solo los títulos que están directamente dentro de <main> */
+main.container > h3 { font-size: 1.6rem; margin-bottom: 1.2rem; }
 
-/* Canales de contacto: cada uno es una tarjeta blanca */
+/* Listas de información en tarjetas blancas */
 main .list-group-item {
   border: 0;
   border-radius: 14px !important;
@@ -383,7 +406,9 @@ main .list-group-item small.text-muted {
 main ol li { margin-bottom: .6rem; line-height: 1.7; }
 
 
-/*10. PANEL DE GESTIÓN (empresa y administrador)*/
+/* ============================================================
+   10. PANEL DE GESTIÓN (empresa y administrador)
+   ============================================================ */
 /* Las tablas van dentro de una tarjeta blanca */
 .table-responsive {
   background: #fff;
@@ -412,3 +437,159 @@ main ol li { margin-bottom: .6rem; line-height: 1.7; }
   color: #7d6b5a;
   text-transform: uppercase;
 }
+
+
+/* ============================================================
+   11. AVISOS Y PIE DE PÁGINA
+   ============================================================ */
+.alert { border: 0; border-radius: 12px; }
+
+footer.bg-dark { margin-top: 4rem !important; padding-block: 3rem 1.5rem !important; }
+footer h5 { font-family: var(--bh-fuente-titulos); color: #fff; }
+footer h6 {
+  font-family: var(--bh-fuente-titulos);
+  color: var(--bh-dorado) !important;
+  font-size: .95rem;
+  margin-bottom: .8rem;
+}
+footer .list-unstyled li { margin-bottom: .45rem; }
+footer .link-light { text-decoration: none; opacity: .85; }
+footer .link-light:hover { color: var(--bh-dorado) !important; opacity: 1; }
+footer hr { border-color: rgba(255, 255, 255, .15); margin-block: 1.5rem; opacity: 1; }
+footer > .container > small { font-family: var(--bh-fuente-datos); font-size: .68rem; }
+
+
+/* ============================================================
+   12. VERSIÓN PARA CELULAR Y TABLET
+   ============================================================ */
+@media (max-width: 991.98px) {          /* tablet y celular */
+  .navbar-collapse { padding: .8rem 0; }
+  .navbar-nav .nav-link { margin: .1rem 0; }
+}
+@media (max-width: 575.98px) {          /* solo celular */
+  header.bg-dark h1 { font-size: 1.7rem; }
+  header.bg-dark.text-center h1 { font-size: 2rem; }
+  .offcanvas { --bs-offcanvas-width: 100%; }   /* el carrito ocupa toda la pantalla */
+}
+
+
+/* ============================================================
+   13. DETALLES EXTRA
+   Logo, íconos, estrellas, efecto de zoom y página Nosotros
+   ============================================================ */
+
+/* ---------- Logo (barra de navegación y footer) ---------- */
+.logo-marca {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ---------- Íconos de la barra: de línea y de un solo color ---------- */
+.navbar .btn-sm { color: #6b5a4a; }
+.navbar .btn-sm:hover { color: var(--bh-morado); }
+.navbar .btn-sm .bi { font-size: 1.1rem; line-height: 1; }
+
+/* ---------- Estrella de calificación: dorada ---------- */
+.estrella { color: var(--bh-dorado); font-size: .8em; margin-right: .15rem; }
+
+/* ---------- Ícono de ubicación junto a la floristería ---------- */
+.bi-geo-alt { margin-right: .2rem; opacity: .75; }
+
+/* ---------- Corazón y carrito de la tarjeta de producto ---------- */
+.card .btn-light.position-absolute .bi { font-size: .85rem; color: #6b5a4a; }
+.card .btn-primary.rounded-circle { color: #fff; }               /* carrito blanco */
+.card .btn-primary.rounded-circle .bi { font-size: .95rem; color: #fff; }
+
+/* ---------- Efecto de zoom al pasar el mouse sobre la imagen ---------- */
+.ratio { overflow: hidden; }
+.ratio > img,
+.card > .card-img-top { transition: transform .45s ease; }
+.card:hover .ratio > img,
+.card:hover > .card-img-top { transform: scale(1.07); }
+
+/* ---------- Título del encabezado de Nosotros: "Bloom House" en dorado cursiva ---------- */
+header.bg-dark h1 em { font-style: italic; color: var(--bh-dorado); }
+
+/* ============================================================
+   PÁGINA NOSOTROS
+   ============================================================ */
+.nosotros { padding-block: 3rem 1rem; }
+
+/* Tarjeta blanca grande (misión, visión y formulario) */
+.tarjeta-nosotros {
+  background: #fff;
+  border-radius: 22px;
+  padding: 1.9rem 2rem;
+}
+.tarjeta-nosotros h2,
+.tarjeta-nosotros h3 { font-family: var(--bh-fuente-titulos); font-weight: 700; }
+.tarjeta-nosotros h2 { font-size: 1.35rem; margin: 0; }
+.tarjeta-nosotros h3 { font-size: 1.2rem; margin-bottom: 1.2rem; }
+.tarjeta-nosotros p { color: #7d6b5a; font-weight: 300; line-height: 2; margin: 0; font-size: .98rem; }
+
+/* Cajita cuadrada con ícono (misión, visión y canales de contacto) */
+.icono-caja {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+.icono-morado  { background: #ece3f5; color: #7b5ea7; }
+.icono-dorado  { background: #fcf3d6; color: #c9a449; }
+.icono-verde   { background: #e8f0e2; color: #4a6b3a; }
+.icono-naranja { background: #fbe9e0; color: #c97a5a; }
+.icono-beige   { background: #efe9df; color: #6b5a4a; }
+
+/* Títulos de sección ("Lo que nos mueve", "Canales de Contacto") */
+.titulo-seccion { font-family: var(--bh-fuente-titulos); font-size: 1.9rem; margin-bottom: 1.6rem; }
+
+/* "Lo que nos mueve": 4 tarjetas con ícono */
+.tarjeta-valor {
+  background: #fff;
+  border-radius: 22px;
+  padding: 1.8rem 1.2rem;
+  text-align: center;
+  height: 100%;
+}
+.valor-icono { display: block; font-size: 2rem; line-height: 1; height: 2.4rem; margin-bottom: .9rem; }
+.tarjeta-valor h3 { font-size: 1.05rem; margin-bottom: .4rem; }
+.tarjeta-valor p { font-size: .82rem; color: #6b5a4a; margin: 0; line-height: 1.5; }
+
+/* Canales de contacto: una tarjeta por canal */
+.canal {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  border-radius: 18px;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 1.1rem;
+  color: inherit;
+  text-decoration: none;
+}
+.canal small { display: block; font-size: .82rem; color: #7d6b5a; }
+.canal strong { font-size: 1.02rem; font-weight: 700; }
+.canal-enlace strong { color: var(--bh-morado); }
+.canal-enlace:hover { box-shadow: 0 6px 18px rgba(42, 27, 14, .1); }
+
+/* Formulario de soporte */
+.tarjeta-nosotros .form-label { font-size: .85rem; color: #6b5a4a; }
+.tarjeta-nosotros .form-control {
+  background: var(--bh-crema);
+  border: 1px solid transparent;
+  border-radius: 16px;
+  padding: .85rem 1.1rem;
+}
+.tarjeta-nosotros .form-control::placeholder { color: #b9a995; }
+.tarjeta-nosotros .form-control:focus {          /* al hacer clic: fondo blanco y borde morado */
+  background: #fff;
+  border-color: var(--bh-morado);
+  box-shadow: 0 0 0 .2rem rgba(123, 94, 167, .18);
+}
+.tarjeta-nosotros .btn-primary { border-radius: 16px; padding: .85rem; font-size: 1rem; }
