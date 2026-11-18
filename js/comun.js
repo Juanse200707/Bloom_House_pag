@@ -19,7 +19,7 @@ const datosIniciales = {
     { id: 3, nombre: "Petalos y Colores", localidad: "Kennedy", ciudad: "Bogotá", especialidades: [], desde: null, verificada: true, whatsapp: "573101234503" }
   ],
   productos: [
-    { id: 1, nombre: "Ramo de 12 rosas rojas", empresaId: 1, categoria: "Ramos", tipo: "Rosas", localidad: "Kennedy", precio: 85000, precioAnterior: 0, etiqueta: "", stock: 20, activo: true, descripcion: "Docena de rosas rojas frescas con follaje y papel kraft" },
+    { id: 1, nombre: "Ramo de 12 rosas rojas", empresaId: 1, categoria: "Ramos", tipo: "Rosas", localidad: "Kennedy", precio: 85000, precioAnterior: 0, etiqueta: "", stock: 20, activo: true, descripcion: "Docena de rosas rojas frescas con follaje y papel kraft", imagen: "imagenes/RamoFlores.png"  },
     { id: 2, nombre: "Ramo de girasoles", empresaId: 1, categoria: "Ramos", tipo: "Girasoles", localidad: "Kennedy", precio: 60000, precioAnterior: 0, etiqueta: "", stock: 15, activo: true, descripcion: "Seis girasoles grandes con gypsophila y lazo amarillo" },
     { id: 3, nombre: "Caja de tulipanes", empresaId: 1, categoria: "Arreglos florales", tipo: "Tulipanes", localidad: "Kennedy", precio: 95000, precioAnterior: 0, etiqueta: "", stock: 8, activo: true, descripcion: "Caja redonda con diez tulipanes de colores mezclados" },
     { id: 4, nombre: "Orquidea phalaenopsis", empresaId: 1, categoria: "Plantas", tipo: "Orquídeas", localidad: "Kennedy", precio: 120000, precioAnterior: 0, etiqueta: "", stock: 6, activo: true, descripcion: "Orquidea blanca de dos varas en matera de ceramica" },
