@@ -39,6 +39,37 @@ async function cargarPanel() {
         llamarApi('/empresas')
     ]);
 
+    // Mostrar la floristería vinculada a la cuenta
+    if (!esAdministrador) {
+    const miEmpresa = empresas.find(
+        empresa => empresa.id === sesionActual.empresaId
+    );
+
+    let infoEmpresa = buscarElemento('#infoEmpresa');
+
+    if (!infoEmpresa) {
+        infoEmpresa = document.createElement('div');
+        infoEmpresa.id = 'infoEmpresa';
+        titulo.insertAdjacentElement('afterend', infoEmpresa);
+    }
+
+    infoEmpresa.className = 'info-floristeria alert bg-light border-start border-success border-4 shadow-sm mt-3';
+
+    infoEmpresa.innerHTML = `
+        <div class="d-flex align-items-center gap-3">
+            <div class="icono-floristeria">
+                <i class="bi bi-flower1"></i>
+            </div>
+            <div>
+                <small class="text-muted d-block">Tu floristería</small>
+                <strong class="text-dark">
+                    ${miEmpresa ? miEmpresa.nombre : 'Floristería no encontrada'}
+                </strong>
+            </div>
+        </div>
+    `;
+    }
+
     // Filtrar pedidos según el rol
     const misPedidos = pedidos.filter(pedido =>
         esAdministrador || pedido.items.some(item => item.empresaId === sesionActual.empresaId)
