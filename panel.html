@@ -64,6 +64,31 @@
 <div id="pie"></div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/comun.js"></script>
+  
+<script>
+(function () {
+  var VERSION = 'kennedy-1';
+  try {
+    if (localStorage.getItem('bloomVersionDatos') !== VERSION) {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'db.json?v=' + VERSION, false);
+      xhr.send();
+      if (xhr.status === 200) {
+        JSON.parse(xhr.responseText);
+        localStorage.setItem('bloomHouseDatos_png', xhr.responseText);
+        localStorage.setItem('bloomVersionDatos', VERSION);
+        localStorage.removeItem('jwt');
+      }
+    }
+  } catch (e) { console.error('No se pudo cargar db.json', e); }
+
+  var reemplazar = function (lista, nuevos) { lista.splice.apply(lista, [0, lista.length].concat(nuevos)); };
+  reemplazar(categoriasDisponibles, ['Ramos', 'Arreglos florales', 'Plantas', 'Detalles y regalos', 'Eventos y duelo']);
+  reemplazar(tiposDeFlores, ['Rosas', 'Girasoles', 'Tulipanes', 'Orquídeas', 'Claveles', 'Lirios', 'Gerberas', 'Margaritas', 'Hortensias', 'Mixtas', 'Suculenta', 'Anturio']);
+  reemplazar(localidades, ['Kennedy']);
+})();
+</script>
+  
 <script src="js/panel.js"></script>
 </body>
 </html>
