@@ -1,29 +1,61 @@
 const datosIniciales = {
   usuarios: [
-    { id: 1, nombre: "Admin Bloom", email: "admin@bloom.co", password: "c0beb5f783db35ccd7991a69ecdd6af2e0d1c5e9f0b98e46672d3fe08bd89e29", rol: "admin" },
-    { id: 2, nombre: "Flores del Valle", email: "empresa@bloom.co", password: "c0beb5f783db35ccd7991a69ecdd6af2e0d1c5e9f0b98e46672d3fe08bd89e29", rol: "empresa", empresaId: 1 },
-    { id: 3, nombre: "Ana Cliente", email: "cliente@bloom.co", password: "c0beb5f783db35ccd7991a69ecdd6af2e0d1c5e9f0b98e46672d3fe08bd89e29", rol: "cliente" }
+    { id: 1, nombre: "Laura Ramirez", email: "laura.ramirez@bloomhouse.com", password: "4d8fcd038af46e9c783a8b3f39a8ee1c40ce91e107066420506a0c0408af8823", rol: "admin" },
+    { id: 2, nombre: "Carlos Mendoza", email: "carlos.mendoza@bloomhouse.com", password: "314bae9d371415d8d6a71e5de39c828ce068001814bf7b94c22de4ff73eadbc7", rol: "empresa", empresaId: 1 },
+    { id: 3, nombre: "Marta Gonzalez", email: "marta.gonzalez@bloomhouse.com", password: "8c4627beee9205c0584b4581e01a8335c3216a8de54017e8bd3caf79767c83e7", rol: "empresa", empresaId: 2 },
+    { id: 4, nombre: "Andres Rojas", email: "andres.rojas@bloomhouse.com", password: "27668e2edbc083c0e0437373526f3eb9f2da756ff63d573f3a3a132be1760523", rol: "empresa", empresaId: 3 },
+    { id: 5, nombre: "Camila Torres", email: "camila.torres@correo.com", password: "bcccd093c88423736c6356ad54e9002c2fb7e5423b83a29719acf2f23d2abcf9", rol: "cliente" },
+    { id: 6, nombre: "Santiago Perez", email: "santiago.perez@correo.com", password: "2cf967d40957b69f3a67fdf7e32a383a675f490f861b008221c88603e930fe7d", rol: "cliente" },
+    { id: 7, nombre: "Valentina Gomez", email: "valentina.gomez@correo.com", password: "1a947815f6e96cb905a694ad9b40b90cab28bf764916d38fcedf887c0eb1a7fb", rol: "cliente" },
+    { id: 8, nombre: "Daniel Castro", email: "daniel.castro@correo.com", password: "83a9d822af1cfb147a451d063d57e31c6454d6f67d772fe61333f438466a3d67", rol: "cliente" },
+    { id: 9, nombre: "Mariana Lopez", email: "mariana.lopez@correo.com", password: "a9825684e4802cde7d1d5f2368d2a7d10456bcea0e3759a540e5771d895ba99e", rol: "cliente" },
+    { id: 10, nombre: "Felipe Vargas", email: "felipe.vargas@correo.com", password: "6f66c87bb972efab443257c977175e963fbcacd4004893c2242b646369cb6cd0", rol: "cliente" },
+    { id: 11, nombre: "Natalia Ortiz", email: "natalia.ortiz@correo.com", password: "ea07e460a469bc5eae3d0c9fc5cb2ad447c3c2bd472dae79c999322890efa8de", rol: "cliente" },
+    { id: 12, nombre: "Jorge Salazar", email: "jorge.salazar@correo.com", password: "a03da7f4f951af7b82d8148dc2aea84a6bcbc02e24d24d3361ea292ed0c29949", rol: "cliente" }
   ],
   empresas: [
-    { id: 1, nombre: "Flores del Valle", localidad: "Chapinero", ciudad: "Bogotá", especialidades: ["Ramos nupciales", "Decoración eventos"], desde: 2018, verificada: true, whatsapp: "573001112233" },
-    { id: 2, nombre: "La Orquídea Dorada", localidad: "El Poblado", ciudad: "Medellín", especialidades: ["Orquídeas", "Plantas tropicales"], desde: 2015, verificada: true, whatsapp: "573004445566" },
-    { id: 3, nombre: "Casa Florentina", localidad: "Granada", ciudad: "Cali", especialidades: ["Bouquet artesanal", "Flores secas"], desde: 2020, verificada: true, whatsapp: "573007778899" },
-    { id: 4, nombre: "Bloom & Co", localidad: "Alto Prado", ciudad: "Barranquilla", especialidades: ["Bodas de lujo", "Centros de mesa"], desde: 2021, verificada: true, whatsapp: "573001230000" }
+    { id: 1, nombre: "Flores del Valle", localidad: "Kennedy", ciudad: "Bogotá", especialidades: [], desde: null, verificada: true, whatsapp: "573101234501" },
+    { id: 2, nombre: "Jardin de Aurora", localidad: "Kennedy", ciudad: "Bogotá", especialidades: [], desde: null, verificada: true, whatsapp: "573101234502" },
+    { id: 3, nombre: "Petalos y Colores", localidad: "Kennedy", ciudad: "Bogotá", especialidades: [], desde: null, verificada: true, whatsapp: "573101234503" }
   ],
   productos: [
-    { id: 1, nombre: "Corona Fúnebre Clásica", empresaId: 1, categoria: "Coronas", tipo: "Mixtas", localidad: "Chapinero", precio: 180000, precioAnterior: 0, etiqueta: "", stock: 10, activo: true, descripcion: "Corona clásica para homenajes.", imagen: "imagenes/corona.png" },
-    { id: 2, nombre: "Ramo de Rosas Rojas Premium", empresaId: 1, categoria: "Ramos", tipo: "Rosas", localidad: "Chapinero", precio: 85000, precioAnterior: 110000, etiqueta: "Más vendido", stock: 12, activo: true, descripcion: "Ramo premium de rosas rojas frescas.", imagen: "imagenes/rosas.png" },
-    { id: 3, nombre: "Jardín Miniatura Suculentas", empresaId: 2, categoria: "Plantas", tipo: "Suculentas", localidad: "El Poblado", precio: 48000, precioAnterior: 0, etiqueta: "", stock: 9, activo: true, descripcion: "Pequeño jardín de suculentas.", imagen: "imagenes/suculentas.png" },
-    { id: 4, nombre: "Arreglo Tropical Silvestre", empresaId: 2, categoria: "Arreglos", tipo: "Mixtas", localidad: "El Poblado", precio: 65000, precioAnterior: 0, etiqueta: "", stock: 7, activo: true, descripcion: "Arreglo con flores tropicales.", imagen: "imagenes/tropical.png" },
-    { id: 5, nombre: "Ramo Silvestre Colombiano", empresaId: 3, categoria: "Ramos", tipo: "Mixtas", localidad: "Granada", precio: 55000, precioAnterior: 0, etiqueta: "", stock: 6, activo: true, descripcion: "Ramo con flores silvestres de Colombia.", imagen: "imagenes/silvestre.png" },
-    { id: 6, nombre: "Bouquet Primavera Pastel", empresaId: 3, categoria: "Ramos", tipo: "Tulipanes", localidad: "Granada", precio: 72000, precioAnterior: 0, etiqueta: "Nuevo", stock: 8, activo: true, descripcion: "Bouquet en tonos pastel.", imagen: "imagenes/pastel.png" },
-    { id: 7, nombre: "Centro de Mesa Bodas", empresaId: 4, categoria: "Eventos", tipo: "Girasoles", localidad: "Alto Prado", precio: 150000, precioAnterior: 180000, etiqueta: "Oferta", stock: 4, activo: true, descripcion: "Centro de mesa elegante para bodas.", imagen: "imagenes/bodas.png" },
-    { id: 8, nombre: "Rosas Ecuatorianas XL", empresaId: 4, categoria: "Ramos", tipo: "Rosas", localidad: "Alto Prado", precio: 95000, precioAnterior: 0, etiqueta: "", stock: 0, activo: true, descripcion: "Rosas grandes de Ecuador.", imagen: "imagenes/ecuatorianas.png" }
+    { id: 1, nombre: "Ramo de 12 rosas rojas", empresaId: 1, categoria: "Ramos", tipo: "Rosas", localidad: "Kennedy", precio: 85000, precioAnterior: 0, etiqueta: "", stock: 20, activo: true, descripcion: "Docena de rosas rojas frescas con follaje y papel kraft" },
+    { id: 2, nombre: "Ramo de girasoles", empresaId: 1, categoria: "Ramos", tipo: "Girasoles", localidad: "Kennedy", precio: 60000, precioAnterior: 0, etiqueta: "", stock: 15, activo: true, descripcion: "Seis girasoles grandes con gypsophila y lazo amarillo" },
+    { id: 3, nombre: "Caja de tulipanes", empresaId: 1, categoria: "Arreglos florales", tipo: "Tulipanes", localidad: "Kennedy", precio: 95000, precioAnterior: 0, etiqueta: "", stock: 8, activo: true, descripcion: "Caja redonda con diez tulipanes de colores mezclados" },
+    { id: 4, nombre: "Orquidea phalaenopsis", empresaId: 1, categoria: "Plantas", tipo: "Orquídeas", localidad: "Kennedy", precio: 120000, precioAnterior: 0, etiqueta: "", stock: 6, activo: true, descripcion: "Orquidea blanca de dos varas en matera de ceramica" },
+    { id: 5, nombre: "Corona de claveles", empresaId: 1, categoria: "Eventos y duelo", tipo: "Claveles", localidad: "Kennedy", precio: 150000, precioAnterior: 0, etiqueta: "", stock: 0, activo: true, descripcion: "Corona funebre de claveles blancos y rojos con cinta" },
+    { id: 6, nombre: "Bouquet de lirios blancos", empresaId: 2, categoria: "Ramos", tipo: "Lirios", localidad: "Kennedy", precio: 78000, precioAnterior: 0, etiqueta: "", stock: 12, activo: true, descripcion: "Ramo de lirios blancos con eucalipto" },
+    { id: 7, nombre: "Caja de rosas y margaritas", empresaId: 2, categoria: "Arreglos florales", tipo: "Mixtas", localidad: "Kennedy", precio: 88000, precioAnterior: 0, etiqueta: "", stock: 10, activo: true, descripcion: "Caja rectangular con rosas rosadas y margaritas" },
+    { id: 8, nombre: "Suculenta decorativa", empresaId: 2, categoria: "Plantas", tipo: "Suculenta", localidad: "Kennedy", precio: 25000, precioAnterior: 0, etiqueta: "", stock: 30, activo: true, descripcion: "Suculenta en matera pequena de barro" },
+    { id: 9, nombre: "Arreglo de gerberas", empresaId: 2, categoria: "Arreglos florales", tipo: "Gerberas", localidad: "Kennedy", precio: 70000, precioAnterior: 0, etiqueta: "", stock: 14, activo: true, descripcion: "Arreglo multicolor de gerberas en canasta" },
+    { id: 10, nombre: "Centro de mesa para eventos", empresaId: 2, categoria: "Eventos y duelo", tipo: "Mixtas", localidad: "Kennedy", precio: 110000, precioAnterior: 0, etiqueta: "", stock: 5, activo: true, descripcion: "Centro de mesa con flores mixtas para ocho personas" },
+    { id: 11, nombre: "Ramo de margaritas", empresaId: 3, categoria: "Ramos", tipo: "Margaritas", localidad: "Kennedy", precio: 45000, precioAnterior: 0, etiqueta: "", stock: 25, activo: true, descripcion: "Ramo de margaritas blancas con papel de colores" },
+    { id: 12, nombre: "Hortensias azules en canasta", empresaId: 3, categoria: "Arreglos florales", tipo: "Hortensias", localidad: "Kennedy", precio: 98000, precioAnterior: 0, etiqueta: "", stock: 7, activo: true, descripcion: "Canasta con tres hortensias azules" },
+    { id: 13, nombre: "Ramo mixto primaveral", empresaId: 3, categoria: "Ramos", tipo: "Mixtas", localidad: "Kennedy", precio: 65000, precioAnterior: 0, etiqueta: "", stock: 18, activo: true, descripcion: "Ramo con flores de temporada en tonos pastel" },
+    { id: 14, nombre: "Anturio rojo", empresaId: 3, categoria: "Plantas", tipo: "Anturio", localidad: "Kennedy", precio: 55000, precioAnterior: 0, etiqueta: "", stock: 0, activo: false, descripcion: "Anturio rojo en matera plastica decorada" },
+    { id: 15, nombre: "Arreglo navideno", empresaId: 3, categoria: "Arreglos florales", tipo: "Mixtas", localidad: "Kennedy", precio: 105000, precioAnterior: 0, etiqueta: "", stock: 12, activo: true, descripcion: "Arreglo de rosas rojas y pino para la temporada decembrina" }
   ],
   resenas: [
-    { id: 1, productoId: 2, usuario: "Ana Cliente", estrellas: 5, texto: "Hermosas y frescas." }
+    { id: 1, productoId: 1, usuario: "Camila Torres", estrellas: 5, texto: "Las rosas llegaron frescas y bien empacadas" },
+    { id: 2, productoId: 2, usuario: "Camila Torres", estrellas: 4, texto: "Muy bonitos los girasoles, duraron una semana" },
+    { id: 3, productoId: 7, usuario: "Santiago Perez", estrellas: 5, texto: "La caja llego perfecta, justo como en la foto" },
+    { id: 4, productoId: 11, usuario: "Valentina Gomez", estrellas: 4, texto: "Buen precio y las margaritas llegaron frescas" },
+    { id: 5, productoId: 6, usuario: "Valentina Gomez", estrellas: 5, texto: "Los lirios huelen delicioso, muy recomendados" },
+    { id: 6, productoId: 4, usuario: "Daniel Castro", estrellas: 5, texto: "La orquidea es hermosa y llego muy bien cuidada" },
+    { id: 7, productoId: 9, usuario: "Mariana Lopez", estrellas: 3, texto: "Bonitas, pero algunas gerberas llegaron muy abiertas" }
   ],
-  pedidos: [],
+  pedidos: [
+    { id: 1, usuarioId: 5, items: [{ productoId: 1, nombre: "Ramo de 12 rosas rojas", empresaId: 1, cant: 1, precio: 85000 }, { productoId: 2, nombre: "Ramo de girasoles", empresaId: 1, cant: 1, precio: 60000 }], total: 145000, pago: "Pse", estado: "entregado", fecha: "2026-10-05T10:15:00" },
+    { id: 2, usuarioId: 6, items: [{ productoId: 7, nombre: "Caja de rosas y margaritas", empresaId: 2, cant: 1, precio: 88000 }], total: 88000, pago: "TarjetaCredito", estado: "entregado", fecha: "2026-10-09T15:40:00" },
+    { id: 3, usuarioId: 7, items: [{ productoId: 11, nombre: "Ramo de margaritas", empresaId: 3, cant: 2, precio: 45000 }, { productoId: 6, nombre: "Bouquet de lirios blancos", empresaId: 2, cant: 1, precio: 78000 }], total: 168000, pago: "TarjetaDebito", estado: "entregado", fecha: "2026-10-14T09:20:00" },
+    { id: 4, usuarioId: 8, items: [{ productoId: 4, nombre: "Orquidea phalaenopsis", empresaId: 1, cant: 1, precio: 120000 }], total: 120000, pago: "BilleterasBancarias", estado: "entregado", fecha: "2026-10-20T11:05:00" },
+    { id: 5, usuarioId: 9, items: [{ productoId: 9, nombre: "Arreglo de gerberas", empresaId: 2, cant: 2, precio: 70000 }], total: 140000, pago: "Pse", estado: "entregado", fecha: "2026-10-27T16:30:00" },
+    { id: 6, usuarioId: 10, items: [{ productoId: 12, nombre: "Hortensias azules en canasta", empresaId: 3, cant: 1, precio: 98000 }, { productoId: 8, nombre: "Suculenta decorativa", empresaId: 2, cant: 1, precio: 25000 }], total: 123000, pago: "TarjetaCredito", estado: "listo", fecha: "2026-11-03T13:10:00" },
+    { id: 7, usuarioId: 11, items: [{ productoId: 10, nombre: "Centro de mesa para eventos", empresaId: 2, cant: 1, precio: 110000 }], total: 110000, pago: "PagoEfectivo", estado: "en proceso", fecha: "2026-11-08T08:45:00" },
+    { id: 8, usuarioId: 12, items: [{ productoId: 13, nombre: "Ramo mixto primaveral", empresaId: 3, cant: 2, precio: 65000 }], total: 130000, pago: "Pse", estado: "registrado", fecha: "2026-11-12T17:25:00" },
+    { id: 9, usuarioId: 5, items: [{ productoId: 3, nombre: "Caja de tulipanes", empresaId: 1, cant: 1, precio: 95000 }], total: 95000, pago: "TarjetaCredito", estado: "cancelado", fecha: "2026-11-14T10:00:00" },
+    { id: 10, usuarioId: 6, items: [{ productoId: 15, nombre: "Arreglo navideno", empresaId: 3, cant: 1, precio: 105000 }, { productoId: 11, nombre: "Ramo de margaritas", empresaId: 3, cant: 1, precio: 45000 }], total: 150000, pago: "TarjetaDebito", estado: "registrado", fecha: "2026-11-16T12:30:00" }
+  ],
   mensajes: []
 };
 
