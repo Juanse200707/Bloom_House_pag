@@ -443,3 +443,117 @@ footer > .container > small { font-family: var(--bh-fuente-datos); font-size: .6
   header.bg-dark.text-center h1 { font-size: 2rem; }
   .offcanvas { --bs-offcanvas-width: 100%; }   /* el carrito ocupa toda la pantalla */
 }
+
+/* ============================================================
+   13. DETALLES EXTRA
+   Logo, íconos, estrellas, efecto de zoom y página Nosotros
+   ============================================================ */
+
+/* ---------- Logo (barra de navegación y footer) ---------- */
+.logo-marca {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/*Íconos de la barra: de línea y de un solo color*/
+.navbar .btn-sm { color: #6b5a4a; }
+.navbar .btn-sm:hover { color: var(--bh-morado); }
+.navbar .btn-sm .bi { font-size: 1.1rem; line-height: 1; }
+
+/*Estrella de calificación: dorada*/
+.estrella { color: var(--bh-dorado); font-size: .8em; margin-right: .15rem; }
+
+/*Ícono de ubicación junto a la floristería*/
+.bi-geo-alt { margin-right: .2rem; opacity: .75; }
+
+/*Corazón y carrito de la tarjeta de producto*/
+.card .btn-light.position-absolute .bi { font-size: .85rem; color: #6b5a4a; }
+.card .btn-primary.rounded-circle { color: #fff; }               /* carrito blanco */
+.card .btn-primary.rounded-circle .bi { font-size: .95rem; color: #fff; }
+
+/*Efecto de zoom al pasar el mouse sobre la imagen*/
+.ratio { overflow: hidden; }
+.ratio > img,
+.card > .card-img-top { transition: transform .45s ease; }
+.card:hover .ratio > img,
+.card:hover > .card-img-top { transform: scale(1.07); }
+
+/*Título del encabezado de Nosotros: "Bloom House" en dorado cursiva*/
+header.bg-dark h1 em { font-style: italic; color: var(--bh-dorado); }
+
+/*11 PÁGINA NOSOTROS*/
+.nosotros { padding-block: 3rem 1rem; }
+
+/* Tarjeta blanca grande (misión, visión y formulario) */
+.tarjeta-nosotros {
+  background: #fff;
+  border-radius: 22px;
+  padding: 1.9rem 2rem;
+}
+.tarjeta-nosotros h2,
+.tarjeta-nosotros h3 { font-family: var(--bh-fuente-titulos); font-weight: 700; }
+.tarjeta-nosotros h2 { font-size: 1.35rem; margin: 0; }
+.tarjeta-nosotros h3 { font-size: 1.2rem; margin-bottom: 1.2rem; }
+.tarjeta-nosotros p { color: #7d6b5a; font-weight: 300; line-height: 2; margin: 0; font-size: .98rem; }
+
+/* Cajita cuadrada con ícono (misión, visión y canales de contacto) */
+.icono-caja {
+  width: 50px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+.icono-morado  { background: #ece3f5; color: #7b5ea7; }
+.icono-dorado  { background: #fcf3d6; color: #c9a449; }
+.icono-verde   { background: #e8f0e2; color: #4a6b3a; }
+.icono-naranja { background: #fbe9e0; color: #c97a5a; }
+.icono-beige   { background: #efe9df; color: #6b5a4a; }
+
+/* Títulos de sección ("Lo que nos mueve", "Canales de Contacto") */
+.titulo-seccion { font-family: var(--bh-fuente-titulos); font-size: 1.9rem; margin-bottom: 1.6rem; }
+
+/* "Lo que nos mueve": 4 tarjetas con ícono */
+.tarjeta-valor {
+  background: #fff;
+  border-radius: 22px;
+  padding: 1.8rem 1.2rem;
+  text-align: center;
+  height: 100%;
+}
+.valor-icono { display: block; font-size: 2rem; line-height: 1; height: 2.4rem; margin-bottom: .9rem; }
+.tarjeta-valor h3 { font-size: 1.05rem; margin-bottom: .4rem; }
+.tarjeta-valor p { font-size: .82rem; color: #6b5a4a; margin: 0; line-height: 1.5; }
+
+/* Canales de contacto: una tarjeta por canal */
+.canal {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #fff;
+  border-radius: 18px;
+  padding: 1.1rem 1.3rem;
+  margin-bottom: 1.1rem;
+  color: inherit;
+  text-decoration: none;
+}
+.canal small { display: block; font-size: .82rem; color: #7d6b5a; }
+.canal strong { font-size: 1.02rem; font-weight: 700; }
+.canal-enlace strong { color: var(--bh-morado); }
+.canal-enlace:hover { box-shadow: 0 6px 18px rgba(42, 27, 14, .1); }
+
+/* Formulario de soporte */
+.tarjeta-nosotros .form-label { font-size: .85rem; color: #6b5a4a; }
+.tarjeta-nosotros .form-control {
+  background: var(--bh-crema);
+  border: 1px solid transparent;
+  border-radius: 16px;
+  padding: .85rem 1.1rem;
+}
+.tarjeta-nosotros .form-control::placeholder { color: #b9a995; }
+.tarjeta-nosotros .btn-primary { border-radius: 16px; padding: .85rem; font-size: 1rem; }
