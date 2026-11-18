@@ -61,7 +61,7 @@ const datosIniciales = {
 
 // Cargar o inicializar la base de datos local
 function obtenerBaseDatos() {
-  const clave = "bloomHouseDatos_png";
+  const clave = "bloomHouseDatos_v2";
   const guardada = localStorage.getItem(clave);
   if (guardada) {
     try { return JSON.parse(guardada); } catch { /* ignorar */ }
@@ -71,7 +71,7 @@ function obtenerBaseDatos() {
 }
 
 function guardarBaseDatos(datos) {
-  localStorage.setItem("bloomHouseDatos_png", JSON.stringify(datos));
+  localStorage.setItem("bloomHouseDatos_v2", JSON.stringify(datos));
 }
 
 // Simulador de API (reemplaza a json-server)
@@ -147,9 +147,9 @@ async function llamarApi(ruta, opciones = {}) {
 // ============================================================
 const buscarElemento = selector => document.querySelector(selector);
 
-const categoriasDisponibles = ['Ramos', 'Arreglos', 'Coronas', 'Eventos', 'Plantas'];
-const tiposDeFlores = ['Rosas', 'Girasoles', 'Tulipanes', 'Orquídeas', 'Suculentas', 'Mixtas'];
-const localidades = ['Chapinero', 'El Poblado', 'Granada', 'Alto Prado'];
+const categoriasDisponibles = ['Ramos', 'Arreglos florales', 'Plantas', 'Detalles y regalos', 'Eventos y duelo'];
+const tiposDeFlores = ['Rosas', 'Girasoles', 'Tulipanes', 'Orquídeas', 'Claveles', 'Lirios', 'Gerberas', 'Margaritas', 'Hortensias', 'Mixtas', 'Suculenta', 'Anturio'];
+const localidades = ['Kennedy'];
 
 const formatearMoneda = cantidad => '$' + Number(cantidad).toLocaleString('es-CO');
 
