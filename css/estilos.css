@@ -1,1 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@400;500&display=swap');
 
+
+/*1. VARIABLES: colores y fuentes de toda la página */
+:root {
+  --bh-crema: #f4efe6;            /* fondo de la página */
+  --bh-cafe: #2a1b0e;             /* texto y fondos oscuros */
+  --bh-morado: #7b5ea7;           /* color principal */
+  --bh-morado-claro: #e9e2f2;     /* fondo suave morado (enlace activo, hover) */
+  --bh-dorado: #c9a449;           /* color de acento */
+  --bh-borde: #e6dccb;            /* color de las líneas y bordes */
+  --bh-sombra: 0 1px 4px rgba(42, 27, 14, .08);
+  --bh-fuente-titulos: 'Playfair Display', Georgia, serif;
+  --bh-fuente-datos: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* Variables de Bootstrap*/
+  --bs-body-font-family: 'Lato', system-ui, sans-serif;
+  --bs-body-font-weight: 400;
+  --bs-body-bg: var(--bh-crema);
+  --bs-body-color: var(--bh-cafe);
+  --bs-secondary-color: #7d6b5a;           /* color del texto*/
+  --bs-border-color: var(--bh-borde);
+  --bs-link-color: var(--bh-morado);
+  --bs-link-color-rgb: 123, 94, 167;
+  --bs-link-hover-color-rgb: 93, 69, 130;
+  --bs-primary: var(--bh-morado);
+  --bs-primary-rgb: 123, 94, 167;
+  --bs-dark-rgb: 42, 27, 14;               /* fondo oscuro: encabezados y footer */
+  --bs-warning-rgb: 201, 164, 73;          /* dorado: contador del carrito y títulos del footer */
+  --bs-success-rgb: 74, 107, 58;           /* verde: etiqueta "Más vendido" */
+  --bs-tertiary-bg-rgb: 244, 239, 230;     /* fondo de la barra de navegación */
+}
+
+html { scroll-behavior: smooth; }   /* desplazamiento suave al usar enlaces internos */
+body { font-weight: 300; }
+
+/* Todos los títulos usan la fuente Playfair Display */
+h1, h2, h3, h4, h5, h6,
+.navbar-brand, .modal-title, .offcanvas-title {
+  font-family: var(--bh-fuente-titulos);
+  font-weight: 700;
+}
+
+
+/*2. BOTONES*/
+.btn { border-radius: 12px; font-weight: 700; }
+
+/* Botón principal: morado, con tonos más oscuros al pasar el mouse o hacer clic */
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-active-color: #fff;
+  --bs-btn-bg: #7b5ea7;
+  --bs-btn-border-color: #7b5ea7;
+  --bs-btn-hover-bg: #6a4e94;
+  --bs-btn-hover-border-color: #6a4e94;
+  --bs-btn-active-bg: #5d4382;
+  --bs-btn-active-border-color: #5d4382;
+  --bs-btn-disabled-bg: #7b5ea7;
+  --bs-btn-disabled-border-color: #7b5ea7;
+  --bs-btn-focus-shadow-rgb: 123, 94, 167;
+}
+
+/* En el panel, "Nuevo producto" y "Guardar" también van en morado */
+#nuevo, #f .btn-danger {
+  --bs-btn-bg: #7b5ea7;
+  --bs-btn-border-color: #7b5ea7;
+  --bs-btn-hover-bg: #6a4e94;
+  --bs-btn-hover-border-color: #6a4e94;
+  --bs-btn-active-bg: #5d4382;
+  --bs-btn-active-border-color: #5d4382;
+}
+
+.rounded-pill { border-radius: 999px !important; }
+
+/*3. BARRA DE NAVEGACIÓN*/
+#nav .navbar {
+  border-bottom: 1px solid var(--bh-borde) !important;
+  padding-block: .55rem;
+}
+.navbar-brand { font-size: 1.15rem; }
+
+/* Enlaces: Marketplace, Floristerías, Nosotros */
+.navbar-nav .nav-link {
+  color: #6b5a4a;
+  font-size: .88rem;
+  padding: .4rem .95rem;
+  margin: 0 .15rem;
+  border-radius: 10px;
+}
+.navbar-nav .nav-link:hover { color: var(--bh-morado); }
+
+/* Enlace de la página en la que estás: fondo morado claro */
+.navbar-nav .nav-link.active {
+  background: var(--bh-morado-claro);
+  color: var(--bh-morado) !important;
+  font-weight: 700;
+}
+
+.navbar .btn-sm { font-size: .85rem; }
+
+/* Contadores pequeños de la campana (rojo) y del carrito (dorado) */
+.navbar .badge.position-absolute {
+  font-family: var(--bh-fuente-datos);
+  font-size: .58rem;
+  padding: .28em .5em;
+}
+.navbar .badge.bg-warning { color: #fff !important; }
+
+/* Menús desplegables: bordes redondeados y sombra suave */
+.dropdown-menu {
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(42, 27, 14, .18);
+  overflow: hidden;
+}
+.dropdown-item:active { background: var(--bh-morado); }
+
+
+/* ============================================================
+   4. ENCABEZADOS OSCUROS (el título grande de cada página)
+   ============================================================ */
+header.bg-dark { padding-block: 2.6rem !important; }
+header.bg-dark h1 { font-size: 2.1rem; margin-bottom: .4rem; }
+header.bg-dark p {
+  font-size: .85rem;
+  color: rgba(255, 255, 255, .72);
+}
+
+/* Encabezado centrado (página Nosotros): más alto y con título más grande */
+header.bg-dark.text-center { padding-block: 3.6rem !important; }
+header.bg-dark.text-center h1 { font-size: 2.7rem; }
+header.bg-dark.text-center p {
+  max-width: 560px;
+  margin-inline: auto;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+
+/* ============================================================
+   5. FILTROS DEL MARKETPLACE (buscador, listas y categorías)
+   ============================================================ */
+/* Buscador y listas desplegables: forma de píldora, fondo blanco */
+#filtros .form-control,
+#filtros .form-select {
+  background-color: #fff;
+  border: 1px solid var(--bh-borde);
+  border-radius: 999px;
+  padding: .6rem 1.1rem;
+  font-size: .88rem;
+}
+
+/* Botones de categoría (Todos, Ramos, Arreglos...) */
+#pills .btn {
+  --bs-btn-bg: #fff;
+  --bs-btn-color: #4a3a2c;
+  --bs-btn-border-color: var(--bh-borde);
+  --bs-btn-hover-bg: var(--bh-morado-claro);
+  --bs-btn-hover-color: var(--bh-morado);
+  --bs-btn-hover-border-color: var(--bh-morado-claro);
+  font-weight: 400;
+  font-size: .82rem;
+  padding: .35rem 1rem;
+}
+/* Categoría seleccionada: morada */
+#pills .btn-primary {
+  --bs-btn-bg: #7b5ea7;
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: #6a4e94;
+  --bs-btn-hover-color: #fff;
+  --bs-btn-border-color: #7b5ea7;
+  font-weight: 700;
+}
+
+
+/*6. TARJETAS (productos, floristerías y cuadros del panel)*/
+.card {
+  border: 0;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: var(--bh-sombra);
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+
+/* Al pasar el mouse por un producto, la tarjeta se levanta un poco */
+#lista .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(42, 27, 14, .14);
+}
+.card-body { padding: .9rem 1rem; }
+.card h5, .card h6 { font-family: var(--bh-fuente-titulos); font-weight: 700; }
+
+/* Imagen del producto: cuadrada y recortada para que no se deforme */
+#lista .ratio-4x3 { --bs-aspect-ratio: 100%; }
+.ratio > img { object-fit: cover; }
+
+/* Imagen de las floristerías: altura fija */
+.card > .card-img-top { height: 11rem; object-fit: cover; }
+
+/* Etiqueta de la esquina (Más vendido, Nuevo, Oferta) */
+.card .badge.position-absolute {
+  z-index: 2;
+  font-family: var(--bh-fuente-datos);
+  font-weight: 500;
+  font-size: .66rem;
+  padding: .35em .7em;
+  border-radius: 8px;
+}
+
+/* Corazón de favoritos: círculo blanco pequeño */
+.card .btn-light.position-absolute {
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, .92);
+  font-size: .85rem;
+  line-height: 1;
+}
+
+/* Botón circular del carrito */
+.card .btn.rounded-circle {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  font-size: .85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Texto "Agotado" sobre la imagen */
+.ratio .bg-light {
+  font-family: var(--bh-fuente-datos);
+  font-size: .8rem;
+  color: #6b5a4a;
+}
+
+/* Textos dentro de la tarjeta de producto */
+#lista .card-body small.text-muted.d-block { font-size: .72rem; margin-bottom: .2rem; }   /* floristería · ciudad */
+#lista .card-body h6 { font-size: .95rem; margin-bottom: .3rem; }                         /* nombre */
+#lista .card-body small.d-block.mb-1 {                                                    /* calificación */
+  font-family: var(--bh-fuente-datos);
+  font-size: .7rem;
+  color: #6b5a4a;
+}
+#lista .card-body b { font-family: var(--bh-fuente-titulos); font-size: 1.05rem; }       /* precio */
+#lista .card-body .text-decoration-line-through {                                         /* precio anterior tachado */
+  font-family: var(--bh-fuente-datos);
+  font-size: .65rem;
+}
+#lista .card-body a.small { font-size: .72rem; color: #4a6b3a; text-decoration: none; }   /* enlace de WhatsApp */
+#lista .card-body a.small:hover { text-decoration: underline; }
+
+/* Colores de las etiquetas según su tipo.
+   (Requieren el cambio opcional del Paso 3 en catalogo.js) */
+.etiqueta { background: #4a6b3a; color: #fff; }                      /* Más vendido: verde */
+.etiqueta[data-etiqueta="Nuevo"] { background: #7b5ea7; }            /* Nuevo: morado */
+.etiqueta[data-etiqueta="Oferta"] { background: #c9a449; }           /* Oferta: dorado */
+
+/* Tarjetas de floristerías */
+.badge.bg-light.text-dark {                                          /* insignia "Verificada" */
+  font-family: var(--bh-fuente-datos);
+  font-weight: 500;
+  font-size: .65rem;
+  background: rgba(255, 255, 255, .92) !important;
+  border-radius: 999px;
+}
+.badge.text-bg-secondary {                                           /* especialidades (Orquídeas, etc.) */
+  background: #ece6f4 !important;
+  color: #5a4380 !important;
+  font-weight: 400;
+  font-size: .72rem;
+  padding: .4em .8em;
+  border-radius: 999px;
+}
+a.text-reset:hover .card {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(42, 27, 14, .14);
+}
+.card-body small { font-size: .78rem; }
+
+
+/*7. FORMULARIOS (inicio de sesión, registro, soporte, panel)*/
+.form-control, .form-select { border-radius: 12px; font-size: .9rem; }
+
+/* Campos dentro de tarjetas y ventanas: fondo crema */
+.card .form-control, .card .form-select,
+.modal .form-control, .modal .form-select {
+  background-color: var(--bh-crema);
+  border: 1px solid transparent;
+  padding: .6rem .9rem;
+}
+.form-label { font-size: .75rem; color: #6b5a4a; margin-bottom: .25rem; }
+
+/* Al hacer clic en un campo: fondo blanco y borde morado */
+.form-control:focus, .form-select:focus {
+  background-color: #fff;
+  border-color: var(--bh-morado);
+  box-shadow: 0 0 0 .2rem rgba(123, 94, 167, .18);
+}
+.form-check-input:checked { background-color: var(--bh-morado); border-color: var(--bh-morado); }
+
+/* Pestañas "Iniciar sesión / Registrarse" */
+.nav-pills {
+  --bs-nav-pills-link-active-bg: #7b5ea7;
+  --bs-nav-pills-border-radius: 12px;
+}
+.nav-pills .nav-link { color: #6b5a4a; }
+.nav-pills .nav-link.active { color: #fff; }
+
+
+/*8. VENTANAS EMERGENTES Y CARRITO LATERAL*/
+.modal-content { border: 0; border-radius: 20px; }
+.modal-header { border-bottom-color: #efe6d8; padding: 1.2rem 1.5rem; }
+.modal-body { padding: 1.2rem 1.5rem 1.5rem; }
+
+/* Ventana "Mi Cuenta": cada tipo de cuenta es una tarjeta con borde */
+#modalCuenta .list-group-item {
+  border: 1px solid #eee3d3;
+  border-radius: 14px !important;
+  margin-bottom: .65rem;
+  padding: .95rem 1.1rem;
+  background: #fff;
+}
+#modalCuenta .list-group-item:hover {
+  background: var(--bh-crema);
+  border-color: var(--bh-morado);
+}
+#modalCuenta .list-group-item small { color: #7d6b5a; font-size: .78rem; }
+
+/* Carrito lateral */
+.offcanvas { --bs-offcanvas-bg: #f4efe6; --bs-offcanvas-width: 380px; }
+.offcanvas-header { border-bottom: 1px solid #e6dccb; }
+.offcanvas .card { border-radius: 14px; }
+.offcanvas .card img { object-fit: cover; height: 60px; border-radius: 10px !important; }
+
+/* Botones − y + de la cantidad: círculos pequeños */
+.offcanvas .btn-group-sm > .btn:not(.disabled) {
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  line-height: 1;
+  border-radius: 50% !important;
+  background: #fff;
+  margin-left: 0 !important;
+}
+/* Número de la cantidad (entre − y +) */
+.offcanvas .btn-group-sm > .btn.disabled {
+  border: 0;
+  background: transparent;
+  opacity: 1;
+  padding: 0 .55rem;
+  font-family: var(--bh-fuente-datos);
+  border-radius: 0 !important;
+}
+/* Parte inferior del carrito: subtotal, total y botón */
+.offcanvas .border-top { background: var(--bh-crema); border-top-color: #e6dccb !important; }
+#totalCarrito { font-family: var(--bh-fuente-titulos); font-size: 1.25rem; }
+
+
+/*9. PÁGINAS DE CONTENIDO (Nosotros y Términos)*/
+main.container h3 { font-size: 1.6rem; margin-bottom: 1.2rem; }
+
+/* Canales de contacto: cada uno es una tarjeta blanca */
+main .list-group-item {
+  border: 0;
+  border-radius: 14px !important;
+  margin-bottom: .6rem;
+  padding: .9rem 1.1rem;
+  box-shadow: var(--bh-sombra);
+}
+main .list-group-item small.text-muted {
+  font-family: var(--bh-fuente-datos);
+  font-size: .68rem;
+}
+main ol li { margin-bottom: .6rem; line-height: 1.7; }
+
+
+/*10. PANEL DE GESTIÓN (empresa y administrador)*/
+/* Las tablas van dentro de una tarjeta blanca */
+.table-responsive {
+  background: #fff;
+  border-radius: 16px;
+  padding: .6rem 1rem;
+  box-shadow: var(--bh-sombra);
+}
+.table { --bs-table-bg: transparent; margin-bottom: 0; font-size: .88rem; }
+
+/* Encabezados de las columnas */
+.table thead th {
+  font-family: var(--bh-fuente-datos);
+  font-size: .68rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: #7d6b5a;
+  border-bottom-color: var(--bh-borde);
+}
+
+/* Tarjetas del informe (ventas, pedidos, stock...) */
+#informe .card h4 { font-family: var(--bh-fuente-titulos); font-size: 1.6rem; margin: .2rem 0 0; }
+#informe .card small {
+  font-family: var(--bh-fuente-datos);
+  font-size: .68rem;
+  color: #7d6b5a;
+  text-transform: uppercase;
+}
+
+
+/*11. AVISOS Y PIE DE PÁGINA*/
+.alert { border: 0; border-radius: 12px; }
+
+footer.bg-dark { margin-top: 4rem !important; padding-block: 3rem 1.5rem !important; }
+footer h5 { font-family: var(--bh-fuente-titulos); color: #fff; }
+footer h6 {
+  font-family: var(--bh-fuente-titulos);
+  color: var(--bh-dorado) !important;
+  font-size: .95rem;
+  margin-bottom: .8rem;
+}
+footer .list-unstyled li { margin-bottom: .45rem; }
+footer .link-light { text-decoration: none; opacity: .85; }
+footer .link-light:hover { color: var(--bh-dorado) !important; opacity: 1; }
+footer hr { border-color: rgba(255, 255, 255, .15); margin-block: 1.5rem; opacity: 1; }
+footer > .container > small { font-family: var(--bh-fuente-datos); font-size: .68rem; }
+
+
+/*12. VERSIÓN PARA CELULAR Y TABLET*/
+@media (max-width: 991.98px) {          /* tablet y celular */
+  .navbar-collapse { padding: .8rem 0; }
+  .navbar-nav .nav-link { margin: .1rem 0; }
+}
+@media (max-width: 575.98px) {          /* solo celular */
+  header.bg-dark h1 { font-size: 1.7rem; }
+  header.bg-dark.text-center h1 { font-size: 2rem; }
+  .offcanvas { --bs-offcanvas-width: 100%; }   /* el carrito ocupa toda la pantalla */
+}
