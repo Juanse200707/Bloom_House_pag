@@ -613,3 +613,7 @@ header.bg-dark h1 em { font-style: italic; color: var(--bh-dorado); }
     font-size: 22px;
     flex-shrink: 0;
 }
+
+/* Evitar estilos externos de google translator */
+.skiptranslate iframe, .goog-te-banner-frame { display: none !important; }
+body { top: 0 !important; }

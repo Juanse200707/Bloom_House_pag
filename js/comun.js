@@ -146,6 +146,38 @@ async function llamarApi(ruta, opciones = {}) {
 // ============================================================
 const buscarElemento = selector => document.querySelector(selector);
 
+// ===== Traductor automático
+
+// ===== Traductor automático de Google =====
+const idiomaActual = () => document.cookie.includes('googtrans=/es/en') ? 'EN' : 'ES';
+
+function cargarTraductor() {
+  if (document.getElementById('google_translate_element')) return;
+
+  const caja = document.createElement('div');
+  caja.id = 'google_translate_element';
+  caja.style.cssText = 'position:absolute; left:-9999px;';
+  document.body.append(caja);
+
+  window.iniciarTraductor = () => {
+    new google.translate.TranslateElement({
+      pageLanguage: 'es',
+      includedLanguages: 'es,en',
+      autoDisplay: false
+    }, 'google_translate_element');
+  };
+
+  const script = document.createElement('script');
+  script.src = 'https://translate.google.com/translate_a/element.js?cb=iniciarTraductor';
+  script.onerror = () => console.error('No se pudo cargar Google Translate (bloqueado o sin internet)');
+  document.body.append(script);
+}
+
+function cambiarIdioma(codigo) {
+  document.cookie = `googtrans=/es/${codigo}; path=/`;
+  location.reload();
+}
+
 const categoriasDisponibles = ['Ramos', 'Arreglos florales', 'Plantas', 'Detalles y regalos', 'Eventos y duelo'];
 const tiposDeFlores = ['Rosas', 'Girasoles', 'Tulipanes', 'Orquídeas', 'Claveles', 'Lirios', 'Gerberas', 'Margaritas', 'Hortensias', 'Mixtas', 'Suculenta', 'Anturio'];
 const localidades = ['Kennedy'];
@@ -223,7 +255,10 @@ const leerCarrito = () => JSON.parse(localStorage.getItem('carrito') || '[]');
 const guardarCarrito = carrito => {
   localStorage.setItem('carrito', JSON.stringify(carrito));
   refrescarCarrito();
+
 };
+
+
 
 function agregarProductoCarrito(producto, nombreEmpresa) {
   const carrito = leerCarrito();
@@ -386,9 +421,9 @@ async function montarInterfazComun() {
               <div class="dropdown">
                 <button class="btn btn-sm dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-globe2"></i> ES</button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Español</a></li>
-                  <li><a class="dropdown-item" href="#">English</a></li>
-                </ul>
+                <li><button class="dropdown-item" onclick="cambiarIdioma('es')">Español</button></li>
+                <li><button class="dropdown-item" onclick="cambiarIdioma('en')">English</button></li>
+               </ul>
               </div>
               <div class="dropdown">
                 <button class="btn btn-sm position-relative" data-bs-toggle="dropdown">
@@ -508,6 +543,7 @@ async function montarInterfazComun() {
   `);
 
   refrescarCarrito();
+  cargarTraductor();
 }
 
 document.addEventListener('DOMContentLoaded', montarInterfazComun);
