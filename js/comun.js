@@ -452,7 +452,7 @@ async function montarInterfazComun() {
                   </ul>
                 </div>
               ` : `
-                <button class="btn btn-primary btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#modalCuenta">Mi Cuenta</button>
+                <button class="btn btn-primary btn-sm rounded-pill text-dark" data-bs-toggle="modal" data-bs-target="#modalCuenta">Mi Cuenta</button>
               `}
             </div>
           </div>
